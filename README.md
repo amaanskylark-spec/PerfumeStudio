@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+# PerfumeStudio 🌸 – Animated Perfume Brand Website (Pure React + GSAP)
 
-## Project info
+A fully responsive, animated brand website for **PerfumeStudio**, an Indian perfume company. Built with **Pure React** and **GSAP animations**, the design reflects modern 2025 web trends — bold, clean, and immersive.
 
-**URL**: https://lovable.dev/projects/a3e5c037-d772-4581-9b14-38f15a8b759f
+## 🚫 Important Rules Followed
+- ✅ **Pure React only** (Strictly NO Next.js)
+- ✅ **GSAP used for all animations**
+- ✅ Fully responsive design
+- ✅ Hosted on Netlify
+- ✅ Codebase available on GitHub
+- ✅ Includes 1–2 min demo video
 
-## How can I edit this code?
 
-There are several ways of editing your application.
 
-**Use Lovable**
+## 📁 Pages Overview
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a3e5c037-d772-4581-9b14-38f15a8b759f) and start prompting.
+### 🏠 Home Page
+- Hero section with GSAP-animated perfume bottle
+- Scroll-based transitions and section reveals
+- CTA and animated previews of other pages
+- Newsletter subscription & social links
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🛍️ Products Page
+- Grid layout with hover effects
+- GSAP product animations
+- Filters (price, category, notes)
+- Navigation to product detail page
 
-**Use your preferred IDE**
+### 📄 Product Detail Page
+- Perfume image with animation
+- Description, price, scent notes
+- Add-to-Cart styled CTA
+- Scroll-based scent reveal animations
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 👤 About Page
+- Brand story timeline with GSAP scroll reveal
+- Founder info & customer testimonials
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🔐 Admin Panel (Optional)
+- Admin login
+- Add/Edit/Delete products
+- Manage orders & subscribers
+- Dashboard overview with animations
 
-Follow these steps:
+### 🔑 Auth Page (Optional)
+- Login / Signup UI with animated transitions
+- Firebase/dummy logic
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🎨 Tech Stack
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Frontend**: React (strictly no Next.js)
+- **Animations**: GSAP (ScrollTrigger, Timelines)
+- **Styling**: Tailwind CSS
+- **Optional**: Firebase (for auth or data)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 💡 Design Inspiration
+This website's animations and interactions are inspired by award-winning **GSAP websites featured on [Awwwards](https://www.awwwards.com/websites/gsap/)**.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 📂 Project Setup
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/a3e5c037-d772-4581-9b14-38f15a8b759f) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```bash
+git clone https://github.com/your-username/perfumestudio.git
+cd perfumestudio
+npm install
+npm start
