@@ -8,12 +8,13 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 import { TextEffectOne } from 'react-text-animate';
+import modelUrl from '@/assets/tripo3d/ps.glb?url';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function PerfumeModel({ modelRef }: { modelRef: React.MutableRefObject<THREE.Group | null> }) {
   const group = modelRef;
-  const { scene } = useGLTF('/src/assets/tripo3d/ps.glb');
+  const { scene } = useGLTF(modelUrl);
 
   // Floating animation
   useFrame((state) => {
@@ -226,4 +227,4 @@ export default HeroSection;
 
 // Required for GLTF loading
 // @ts-ignore
-useGLTF.preload('/src/assets/tripo3d/ps.glb');
+useGLTF.preload(modelUrl);
