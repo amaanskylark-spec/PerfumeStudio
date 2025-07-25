@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function PerfumeModel({ modelRef }: { modelRef: React.MutableRefObject<THREE.Group | null> }) {
   const group = modelRef;
-  const { scene } = useGLTF('/src/assets/tripo 3d/ps.glb');
+  const { scene } = useGLTF('/src/assets/tripo3d/ps.glb');
 
   // Floating animation
   useFrame((state) => {
@@ -226,4 +226,4 @@ export default HeroSection;
 
 // Required for GLTF loading
 // @ts-ignore
-useGLTF.preload('/src/assets/tripo 3d/ps.glb');
+useGLTF.preload('/src/assets/tripo3d/ps.glb');

@@ -20,22 +20,26 @@ const Home = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Featured products animation
-      gsap.fromTo('.featured-card',
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: featuredRef.current,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse'
+      const featuredCards = document.querySelectorAll('.featured-card');
+      if (featuredCards.length > 0) {
+        gsap.fromTo(
+          featuredCards,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: featuredRef.current,
+              start: 'top 80%',
+              end: 'bottom 20%',
+              toggleActions: 'play none none reverse'
+            }
           }
-        }
-      );
+        );
+      }
 
       // Benefits animation
       gsap.fromTo('.benefit-item',
