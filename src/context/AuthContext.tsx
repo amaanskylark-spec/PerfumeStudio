@@ -30,17 +30,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (stored) {
         setUser(stored);
         setIsAdmin(stored === 'admin');
-      } else {
-        // Set a default user for testing purposes
-        // Remove this in production
-        setUser('user');
-        localStorage.setItem('authUser', 'user');
       }
+      // Removed default user setting - users should log in properly
     } catch (e) {
       console.error('LocalStorage not available:', e);
       // Fallback to session storage or cookies could be implemented here
-      // For now, set a default user for testing
-      setUser('user');
     }
   }, []);
 

@@ -9,7 +9,6 @@ import {
   ShoppingCart,
   Users,
   Settings,
-  LogOut,
   PlusCircle,
   ArrowLeft,
   Menu,
@@ -79,10 +78,7 @@ const AdminLayout = () => {
     }
   };
 
-  const handleLogout = () => {
-    logout();
-    navigate('/admin/login');
-  };
+
 
   const menuItems = [
     { icon: <LayoutDashboard size={20} />, label: 'Dashboard', path: '/admin/dashboard' },
@@ -121,7 +117,7 @@ const AdminLayout = () => {
       {/* Mobile Header with Hamburger */}
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg shadow-sm p-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">ScentScape Admin</h2>
+          <h2 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">PerfumeStudio Admin</h2>
           <button
             onClick={toggleSidebar}
             className="p-2 rounded-md hover:bg-accent text-foreground hover:text-primary transition-colors duration-300"
@@ -141,7 +137,7 @@ const AdminLayout = () => {
         style={{ willChange: 'transform, opacity' }}
       >
         <div className="mb-8 p-4 hidden md:block">
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">ScentScape</h2>
+          <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">PerfumeStudio</h2>
           <p className="text-sm text-muted-foreground">Admin Portal</p>
         </div>
         
@@ -160,16 +156,7 @@ const AdminLayout = () => {
           ))}
         </nav>
         
-        <div className="mt-auto pt-4 border-t border-border">
-          <Button 
-            variant="ghost" 
-            className="w-full justify-start text-muted-foreground hover:text-foreground" 
-            onClick={handleLogout}
-          >
-            <LogOut size={20} className="mr-2" />
-            Logout
-          </Button>
-        </div>
+
       </div>
       
       {/* Overlay for mobile when sidebar is open */}

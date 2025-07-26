@@ -127,18 +127,18 @@ const Home = () => {
       <HeroSection />
 
       {/* Featured Products Section */}
-      <section ref={featuredRef} className="py-20 bg-background">
+      <section ref={featuredRef} className="py-12 sm:py-16 lg:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-foreground mb-4">
               <TextEffectOne text="Featured Collection" className="inline text-foreground" staggerDuration={0.08} initialDelay={0} animateOnce={false} />
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               Discover our most beloved fragrances, carefully crafted to elevate your senses
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
             {featuredProducts.map((product) => (
               <div key={product.id} className="featured-card">
                 <ProductCard {...product} />
@@ -146,42 +146,42 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-12">
             <Button 
               size="lg" 
-              className="btn-elegant text-white font-semibold px-8 py-4 rounded-full group"
+              className="btn-elegant text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full group"
               onClick={() => navigate('/products')}
             >
               View All Products
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section ref={benefitsRef} className="py-20 bg-gradient-to-br from-accent to-muted">
+      <section ref={benefitsRef} className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-accent to-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
               <TextEffectOne text="Why Choose PerfumeStudio" className="inline text-foreground" staggerDuration={0.08} initialDelay={0} animateOnce={false} />
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               Experience the difference with our commitment to quality and customer satisfaction
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="benefit-item text-center group">
-                <div className="glass rounded-2xl p-8 h-full space-y-4 hover:shadow-elegant transition-all duration-500">
-                  <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <benefit.icon className="h-8 w-8 text-white" />
+                <div className="glass rounded-2xl p-6 sm:p-8 h-full space-y-4 hover:shadow-elegant transition-all duration-500">
+                  <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <benefit.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-display font-semibold text-foreground">
+                  <h3 className="text-lg sm:text-xl font-display font-semibold text-foreground">
                     {benefit.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>

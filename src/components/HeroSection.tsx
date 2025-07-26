@@ -148,13 +148,13 @@ const HeroSection = () => {
 
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
-          <div className="text-center lg:text-left space-y-8">
-            <div className="space-y-6">
+          <div className="text-center lg:text-left space-y-6 lg:space-y-8">
+            <div className="space-y-4 lg:space-y-6">
               <h1 
                 ref={titleRef}
-                className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold"
+                className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-display font-bold"
               >
                 <TextEffectOne
                   text="Discover Your Essence"
@@ -167,7 +167,7 @@ const HeroSection = () => {
               
               <p 
                 ref={subtitleRef}
-                className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+                className="text-base sm:text-lg lg:text-xl xl:text-2xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed"
               >
                 Experience the art of fine fragrance with our curated collection of 
                 premium perfumes. Each scent tells a story, each bottle holds a dream.
@@ -177,16 +177,16 @@ const HeroSection = () => {
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
                 size="lg" 
-                className="btn-elegant text-white font-semibold px-8 py-4 rounded-full group"
+                className="btn-elegant text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full group"
               >
-                <Sparkles className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+                <Sparkles className="mr-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:animate-pulse" />
                 Explore Collection
               </Button>
               
               <Button 
                 variant="outline" 
                 size="lg"
-                className="glass border-primary/30 text-primary hover:bg-primary/10 font-semibold px-8 py-4 rounded-full"
+                className="glass border-primary/30 text-primary hover:bg-primary/10 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full"
               >
                 Learn Our Story
               </Button>
@@ -194,7 +194,7 @@ const HeroSection = () => {
           </div>
 
           {/* 3D Perfume Model */}
-          <div className="relative mx-auto w-full max-w-lg h-[400px] sm:h-[500px] lg:h-[600px]">
+          <div className="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-lg h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px]">
             <Suspense fallback={<div className="flex items-center justify-center h-full">Loading 3D...</div>}>
               <Canvas camera={{ position: [0, 0, 4], fov: 35 }} style={{ background: 'transparent' }}>
                 <ambientLight intensity={0.8} />
@@ -206,16 +206,16 @@ const HeroSection = () => {
               {/* Glow Effect */}
             <div className="absolute inset-0 bg-gradient-primary opacity-20 blur-3xl rounded-full scale-75 pointer-events-none" />
             {/* Decorative Elements */}
-            <div className="absolute -top-10 -right-10 w-20 h-20 bg-secondary/20 rounded-full blur-xl animate-pulse" />
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-pulse delay-1000" />
+            <div className="absolute -top-8 -right-8 sm:-top-10 sm:-right-10 w-16 h-16 sm:w-20 sm:h-20 bg-secondary/20 rounded-full blur-xl animate-pulse" />
+            <div className="absolute -bottom-8 -left-8 sm:-bottom-10 sm:-left-10 w-24 h-24 sm:w-32 sm:h-32 bg-primary/20 rounded-full blur-2xl animate-pulse delay-1000" />
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-center">
           <div className="flex flex-col items-center space-y-2 animate-bounce">
-            <span className="text-sm text-muted-foreground font-medium">Scroll to discover</span>
-            <ArrowDown className="h-5 w-5 text-primary" />
+            <span className="text-xs sm:text-sm text-muted-foreground font-medium">Scroll to discover</span>
+            <ArrowDown className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
           </div>
         </div>
       </div>

@@ -40,8 +40,8 @@ const AdminLogin = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simple admin authentication
-    if (email === 'admin@scentscape.com' && password === 'admin123') {
+    // Simple admin authentication - accept both email and username formats
+    if ((email === 'admin@scentscape.com' || email === 'admin') && password === 'admin123') {
       // Animation on successful login
       gsap.to(formRef.current, {
         y: -20,
@@ -97,8 +97,9 @@ const AdminLogin = () => {
             Login to Admin Panel
           </Button>
           
-          <div className="text-xs text-muted-foreground text-center mt-2">
-            Demo: admin@scentscape.com / admin123
+          <div className="text-xs text-muted-foreground text-center mt-2 space-y-1">
+            <div>Admin Demo: admin@scentscape.com / admin123</div>
+            <div>Or use: admin / admin123</div>
           </div>
         </form>
       </div>

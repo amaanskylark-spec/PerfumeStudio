@@ -70,16 +70,16 @@ const Navigation = () => {
       isScrolled ? 'bg-background/95 backdrop-blur-lg shadow-card' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="flex justify-between items-center h-14 sm:h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="nav-item">
-            <h1 className="text-2xl lg:text-3xl font-display font-bold bg-gradient-elegant bg-clip-text text-transparent">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold bg-gradient-elegant bg-clip-text text-transparent">
               PerfumeStudio
             </h1>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -99,53 +99,58 @@ const Navigation = () => {
           </div>
 
           {/* Right Icons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             <button className="nav-item p-2 text-foreground hover:text-primary transition-colors duration-300">
-              <Search size={20} />
+              <Search size={18} className="sm:w-5 sm:h-5" />
             </button>
-            
-            {/* Profile Icon with Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="nav-item p-2 text-foreground hover:text-primary transition-colors duration-300">
-                  <User size={20} />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                {user ? (
-                  <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
-                    <LogOut className="mr-2 h-4 w-4" />
-                    <span>Logout</span>
-                  </DropdownMenuItem>
-                ) : (
-                  <DropdownMenuItem onClick={handleLogin} className="cursor-pointer">
-                    <LogIn className="mr-2 h-4 w-4" />
-                    <span>Login</span>
-                  </DropdownMenuItem>
-                )}
-              </DropdownMenuContent>
-            </DropdownMenu>
             
             {user && (
               <>
                 <button onClick={() => navigate('/wishlist')} className="nav-item p-2 text-foreground hover:text-primary transition-colors duration-300 relative">
-                  <Heart size={20} />
+                  <Heart size={18} className="sm:w-5 sm:h-5" />
                   {wishlistItems.length > 0 && (
-                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-secondary-foreground text-xs rounded-full flex items-center justify-center">
+                    <span className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-secondary text-secondary-foreground text-xs rounded-full flex items-center justify-center">
                       {wishlistItems.length}
                     </span>
                   )}
                 </button>
                 <button onClick={() => navigate('/cart')} className="nav-item p-2 text-foreground hover:text-primary transition-colors duration-300 relative">
-              <ShoppingBag size={20} />
+                  <ShoppingBag size={18} className="sm:w-5 sm:h-5" />
                   {cartItems.length > 0 && (
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-secondary-foreground text-xs rounded-full flex items-center justify-center">
+                    <span className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-secondary text-secondary-foreground text-xs rounded-full flex items-center justify-center">
                       {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
-              </span>
+                    </span>
                   )}
-            </button>
+                </button>
               </>
             )}
+
+            {/* User Menu */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="nav-item p-2 text-foreground hover:text-primary transition-colors duration-300">
+                  <User size={18} className="sm:w-5 sm:h-5" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                {user ? (
+                  <>
+                    <DropdownMenuItem className="text-sm">
+                      Welcome, {user}
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={handleLogout} className="text-destructive">
+                      <LogOut className="mr-2 h-4 w-4" />
+                      Logout
+                    </DropdownMenuItem>
+                  </>
+                ) : (
+                  <DropdownMenuItem onClick={handleLogin}>
+                    <LogIn className="mr-2 h-4 w-4" />
+                    Login
+                  </DropdownMenuItem>
+                )}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -153,13 +158,13 @@ const Navigation = () => {
             onClick={toggleMenu}
             className="md:hidden p-2 text-foreground hover:text-primary transition-colors duration-300"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="mobile-menu md:hidden mt-4 pb-4">
+          <div className="mobile-menu md:hidden mt-2 pb-4">
             <div className="glass rounded-lg p-4 space-y-3">
               {navLinks.map((link) => (
                 <Link
@@ -176,9 +181,9 @@ const Navigation = () => {
                 </Link>
               ))}
               
-              <div className="flex items-center justify-center space-x-6 pt-4 border-t border-border">
+              <div className="flex items-center justify-center space-x-4 sm:space-x-6 pt-4 border-t border-border">
                 <button className="p-2 text-foreground hover:text-primary transition-colors duration-300">
-                  <Search size={20} />
+                  <Search size={18} />
                 </button>
                 
                 {/* Mobile Profile Button */}
@@ -187,42 +192,15 @@ const Navigation = () => {
                     handleLogout();
                     setIsOpen(false);
                   }} className="p-2 text-foreground hover:text-primary transition-colors duration-300 flex items-center">
-                    <LogOut size={20} />
+                    <LogOut size={18} />
                   </button>
                 ) : (
                   <button onClick={() => {
                     handleLogin();
                     setIsOpen(false);
                   }} className="p-2 text-foreground hover:text-primary transition-colors duration-300 flex items-center">
-                    <LogIn size={20} />
+                    <LogIn size={18} />
                   </button>
-                )}
-                
-                {user && (
-                  <>
-                    <button onClick={() => {
-                      navigate('/wishlist');
-                      setIsOpen(false);
-                    }} className="p-2 text-foreground hover:text-primary transition-colors duration-300 relative">
-                      <Heart size={20} />
-                      {wishlistItems.length > 0 && (
-                        <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-secondary-foreground text-xs rounded-full flex items-center justify-center">
-                          {wishlistItems.length}
-                        </span>
-                      )}
-                    </button>
-                    <button onClick={() => {
-                      navigate('/cart');
-                      setIsOpen(false);
-                    }} className="p-2 text-foreground hover:text-primary transition-colors duration-300 relative">
-                      <ShoppingBag size={20} />
-                      {cartItems.length > 0 && (
-                        <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-secondary-foreground text-xs rounded-full flex items-center justify-center">
-                          {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
-                        </span>
-                      )}
-                    </button>
-                  </>
                 )}
               </div>
             </div>

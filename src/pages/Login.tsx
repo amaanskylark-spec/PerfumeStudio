@@ -52,10 +52,10 @@ const Login = () => {
         />
         {error && <div className="text-red-500 text-center">{error}</div>}
         <Button type="submit" className="w-full btn-elegant text-white font-semibold py-3 rounded-full">Login</Button>
-        <div className="text-center text-muted-foreground">
-          Don&apos;t have an account? <Link to="/register" className="text-primary font-semibold hover:underline">Register</Link>
+        <div className="text-xs text-muted-foreground text-center mt-2 space-y-1">
+          <div>User Demo: demo / demo123</div>
+          <div>Admin Demo: admin / admin123</div>
         </div>
-        <div className="text-xs text-muted-foreground text-center mt-2">Demo: demo / demo123</div>
       </form>
     </div>
   );

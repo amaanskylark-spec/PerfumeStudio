@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useContext } from 'react';
 import { gsap } from 'gsap';
 import { useNavigate, Link } from 'react-router-dom';
+import { AuthContext } from '@/context/AuthContext';
 import allProducts from '@/data/products';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -31,6 +32,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip,
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const { logout } = useContext(AuthContext);
   const cardsRef = useRef(null);
   const chartRef = useRef(null);
   const [activeTab, setActiveTab] = useState('overview');
@@ -441,8 +443,8 @@ setProducts(allProducts.map(product => ({
 
   const [showLockout, setShowLockout] = useState(false);
   const handleLockout = () => {
-    localStorage.removeItem('adminAuth');
-    navigate('/');
+    logout();
+    navigate('/login');
   };
 
   return (
